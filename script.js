@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 function sendText() {
     // Code to handle text input and API calls
 }
