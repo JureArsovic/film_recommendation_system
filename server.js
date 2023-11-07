@@ -20,8 +20,8 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  //try {
-    console.log("Question prompt: ", req.body.prompt);
+  try {
+    //console.log("Question prompt: ", req.body.prompt);
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
@@ -37,10 +37,10 @@ app.post("/", async (req, res) => {
       bot: response.choices[0].message.content,
     });
     //console.log("Bot response: ", choices[0].message.content);
-  /*} catch (error) {
+  } catch (error) {
     console.log(error);
     res.status(500).send({ error });
-  }*/
+  }
 });
 
 app.listen(8080, () => {

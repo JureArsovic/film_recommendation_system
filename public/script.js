@@ -6,13 +6,13 @@ const responseContainer = document.getElementById('response');
 // Add a click event listener to the send button
 sendButton.addEventListener('click', function() {
     const userInput = inputField.value;
-    console.log("User input: ", userInput);
+    //console.log("User input: ", userInput);
     askQuestion(userInput);
     inputField.value = '';
 });
 
 function askQuestion(question) {
-    console.log("Asking question: ", question);
+    //console.log("Asking question: ", question);
     fetch('/', {
         method: 'POST',
         headers: {
@@ -30,7 +30,7 @@ function askQuestion(question) {
 }
 
 function displayResponse(text) {
-  console.log("Bot response: ", text);
+  //console.log("Bot response: ", text);
   let responseText = text.bot;
 
   responseContainer.innerText = responseText;

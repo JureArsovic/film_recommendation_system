@@ -1,18 +1,64 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 50px; 
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%; 
+    max-width: 960px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.chatbox {
+    margin-bottom: 30px; /* Increased margin for the chatbox */
 }
 
 #textInput {
-    width: 70%;
+    width: calc(100% - 22px); /* Adjust width, accounting for padding and border */
     padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
 }
 
 button {
-    padding: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Added space above the buttons */
+}
+
+button:hover {
+    background-color: #4cae4c;
 }
 
 #response {
     margin-top: 20px;
     border: 1px solid #ddd;
     padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-height: 50px;
 }
