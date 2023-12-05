@@ -30,9 +30,32 @@ function askQuestion(question) {
 function displayResponse(text) {
   //console.log("Bot response: ", text);
   let responseText = text.bot;
+  speakText(responseText);
 
   responseContainer.innerText = responseText;
 }
+
+function speakText(text) {
+    if ('speechSynthesis' in window) {
+        var sentences = text.split('.');
+        
+        sentences.forEach(function(sentence) {
+            sentence = sentence.trim();
+            
+            if (sentence) {
+                var utterance = new SpeechSynthesisUtterance(sentence);
+                utterance.lang = 'en-US';
+                utterance.rate = 1;
+                utterance.pitch = 1;
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+    } else {
+        console.error('Text-to-speech not supported.');
+    }
+}
+
+
 
 if ('webkitSpeechRecognition' in window) {
   var recognition = new webkitSpeechRecognition();
@@ -61,5 +84,4 @@ if ('webkitSpeechRecognition' in window) {
 } else {
   console.error("Speech recognition not supported in this browser.");
 }
-
 
